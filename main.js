@@ -1,39 +1,25 @@
-const form = document.getElementById("form-contato");
-const contato = [];
+$(document).ready(function() {
+    // Função para adicionar uma nova tarefa
+    $('#task-form').submit(function(event) {
+        event.preventDefault();  // Evita o envio do formulário
 
-let linhas = '';
+        // Pega o valor do campo de tarefa
+        var taskName = $('#task-name').val();
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
+        if (taskName) {
+            // Cria um novo item de lista <li>
+            var newTask = $('<li>').text(taskName);
 
-    adicionaLinha();
-    atualizaTabela();
+            // Adiciona o item à lista ordenada
+            $('#task-list').append(newTask);
+
+            // Limpa o campo de entrada
+            $('#task-name').val('');
+        }
+    });
+
+    // Função para marcar a tarefa como concluída (com riscado)
+    $('#task-list').on('click', 'li', function() {
+        $(this).toggleClass('completed');  // Adiciona ou remove a classe 'completed'
+    });
 });
-
-function adicionaLinha() {
-    const inputNome = document.getElementById('nome');
-    const inputTelefone = document.getElementById('telefone');
-
-    if (contato.includes(inputTelefone.value)) {
-        alert(`Contato já adicionado com o mesmo número.`)
-    } else {
-        contato.push(inputTelefone.value);
-
-        let linha = `<tr>`;
-        linha += `<td>${inputNome.value}</td>`;
-        linha += `<td>${inputTelefone.value}</td>`;
-        linha += `</tr>`;
-
-        linhas += linha;
-    }
-
-    inputNome.value = '';
-    inputTelefone.value = '';
-
-}
-
-function atualizaTabela() {
-    const corpoTabela = document.querySelector('tbody');
-    corpoTabela.innerHTML = linhas;
-}
-

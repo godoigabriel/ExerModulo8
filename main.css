@@ -1,90 +1,65 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Work Sans";
-}
-
 body {
-    background-color: #E7E7E7;
-    padding-top: 100px;
-}
-
-header {
+    font-family: Arial, sans-serif;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 40px;
-}
-
-header img {
-    height: 36px;
-    margin-right: 16px;
-}
-
-header h1 {
-    font-size: 40px;
-    font-weight: bold;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
 .container {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
 }
 
-form input {
-    font-size: 16px;
-    background-color: #fff;
-    border: none;
-    border-bottom: 2px solid #000;
-    padding: 8px;
-}
-
-form button {
-    background-color: #00883c;
-    color: #E7E7E7;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    padding: 14px;
-    border-radius: 10px;
-}
-
-table {
-    width: 100%;
-}
-
-table th {
-    border-bottom: 2px solid #000;
-    padding: 16px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-table td {
-    padding: 16px;
+h1 {
     text-align: center;
-    font-size: 18px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
-table td img {
-    height: 30px;
+#task-form {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
 }
 
-.resultado {
+#task-name {
+    width: 200px;
     padding: 8px;
-    font-weight: bold;
-    color: #fff;
-    background-color: #000;
-    border-radius: 3px;
+    font-size: 16px;
 }
 
-.aprovado {
-    background-color: #00883c;
+button {
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
-.reprovado {
-    background-color: #af2222;
+button:hover {
+    background-color: #45a049;
+}
+
+ol {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+li {
+    font-size: 18px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: gray;
 }
